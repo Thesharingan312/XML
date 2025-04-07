@@ -8,14 +8,14 @@
     <link>https://www.noticiastech.com</link>
     <description>Actualizaciones diarias sobre el mundo tecnológico: IA, ciberseguridad, software y más.</description>
     <language>es-es</language>
-    <lastBuildDate>Mon, 07 Apr 2025 12:19:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 12:19:00 </lastBuildDate>
 
     <!-- [CRITERIO 5] Ejemplo de ítems para validación -->
     <item>
         <title>Lanzamiento del nuevo chip Intel AI</title>
         <link>https://www.noticiastech.com/intel-ai-chip</link>
         <description>Intel presenta su nuevo chip con capacidades de IA mejoradas para dispositivos móviles.</description>
-        <pubDate>Mon, 07 Apr 2025 10:30:00 +0000</pubDate>
+        <pubDate>Mon, 07 Apr 2025 10:30:00 GMT</pubDate>
         <guid>https://www.noticiastech.com/intel-ai-chip</guid>
     </item>
 
@@ -23,7 +23,7 @@
         <title>Actualización de seguridad para Android 15</title>
         <link>https://www.noticiastech.com/android15-seguridad</link>
         <description>Google lanza un parche importante para corregir vulnerabilidades críticas.</description>
-        <pubDate>Mon, 07 Apr 2025 09:00:00 +0000</pubDate>
+        <pubDate>Mon, 07 Apr 2025 09:00:00 GMT</pubDate>
         <guid>https://www.noticiastech.com/android15-seguridad</guid>
     </item>
     
@@ -44,44 +44,55 @@
     </item>
 
     <item>
-    <title>Microsoft lanza actualización de seguridad para Windows 11</title>
-    <link>https://www.noticiastech.com/microsoft-windows11-seguridad</link>
-    <description>Microsoft publica un parche para corregir vulnerabilidades críticas en Windows 11.</description>
-    <pubDate>Wed, 08 Apr 2025 10:00:00 GMT</pubDate>
-    <guid>https://www.noticiastech.com/microsoft-windows11-seguridad</guid>
-</item>
+        <title>Microsoft lanza actualización de seguridad para Windows 11</title>
+        <link>https://www.noticiastech.com/microsoft-windows11-seguridad</link>
+        <description>Microsoft publica un parche para corregir vulnerabilidades críticas en Windows 11.</description>
+        <pubDate>Wed, 08 Apr 2025 10:00:00 GMT</pubDate>
+        <guid>https://www.noticiastech.com/microsoft-windows11-seguridad</guid>
+    </item>
 
-<item>
-    <title>Amazon anuncia nuevos productos Echo con IA integrada</title>
-    <link>https://www.noticiastech.com/amazon-echo-ia</link>
-    <description>Amazon presenta nuevos altavoces Echo con capacidades de IA mejoradas para el hogar.</description>
-    <pubDate>Wed, 08 Apr 2025 11:00:00 GMT</pubDate>
-    <guid>https://www.noticiastech.com/amazon-echo-ia</guid>
-</item>
+    <item>
+        <title>Amazon anuncia nuevos productos Echo con IA integrada</title>
+        <link>https://www.noticiastech.com/amazon-echo-ia</link>
+        <description>Amazon presenta nuevos altavoces Echo con capacidades de IA mejoradas para el hogar.</description>
+        <pubDate>Wed, 08 Apr 2025 11:00:00 GMT</pubDate>
+        <guid>https://www.noticiastech.com/amazon-echo-ia</guid>
+    </item>
 
-<item>
-    <title>Google anuncia mejoras en su plataforma de Machine Learning</title>
-    <link>https://www.noticiastech.com/google-ml-platform</link>
-    <description>Google mejora su plataforma de aprendizaje automático para desarrolladores.</description>
-    <pubDate>Wed, 08 Apr 2025 12:00:00 GMT</pubDate>
-    <guid>https://www.noticiastech.com/google-ml-platform</guid>
-</item>
+    <item>
+        <title>Google anuncia mejoras en su plataforma de Machine Learning</title>
+        <link>https://www.noticiastech.com/google-ml-platform</link>
+        <description>Google mejora su plataforma de aprendizaje automático para desarrolladores.</description>
+        <pubDate>Wed, 08 Apr 2025 12:00:00 GMT</pubDate>
+        <guid>https://www.noticiastech.com/google-ml-platform</guid>
+    </item>
 
-<item>
-    <title>Facebook lanza nuevas herramientas para combatir el spam</title>
-    <link>https://www.noticiastech.com/facebook-antispam</link>
-    <description>Facebook introduce algoritmos avanzados para reducir el spam en su plataforma.</description>
-    <pubDate>Wed, 08 Apr 2025 13:00:00 GMT</pubDate>
-    <guid>https://www.noticiastech.com/facebook-antispam</guid>
-</item>
+    <item>
+        <title>Facebook lanza nuevas herramientas para combatir el spam</title>
+        <link>https://www.noticiastech.com/facebook-antispam</link>
+        <description>Facebook introduce algoritmos avanzados para reducir el spam en su plataforma.</description>
+        <pubDate>Wed, 08 Apr 2025 13:00:00 GMT</pubDate>
+        <guid>https://www.noticiastech.com/facebook-antispam</guid>
+    </item>
 
-<item>
-    <title>Apple presenta su nuevo modelo de Macbook Air con procesador M3</title>
-    <link>https://www.noticiastech.com/apple-macbook-air-m3</link>
-    <description>Apple lanza una nueva versión del Macbook Air con el procesador M3 más rápido.</description>
-    <pubDate>Wed, 08 Apr 2025 14:00:00 GMT</pubDate>
-    <guid>https://www.noticiastech.com/apple-macbook-air-m3</guid>
-</item>
+    <item>
+        <title>Apple presenta su nuevo modelo de Macbook Air con procesador M3</title>
+        <link>https://www.noticiastech.com/apple-macbook-air-m3</link>
+        <description>Apple lanza una nueva versión del Macbook Air con el procesador M3 más rápido.</description>
+        <pubDate>Wed, 08 Apr 2025 14:00:00 GMT</pubDate>
+        <guid>https://www.noticiastech.com/apple-macbook-air-m3</guid>
+    </item>
+
+<item>  
+  <title>Google anuncia mejoras en IA</title>  
+  <link>https://www.noticiastech.com/google-ia</link>  
+  <guid>https://www.noticiastech.com/google-ia</guid>  
+  <pubDate>Wed, 08 Apr 2025 12:00:00 GMT</pubDate>  
+  <author>tecnologia@noticiastech.com</author>  
+  <category>Tecnología</category>  
+  <description>Google presenta nuevas funciones de IA en su buscador...</description>  
+  <enclosure url="https://www.noticiastech.com/audio-ia.mp3" length="5000" type="audio/mpeg" />  
+</item>  
 
 
 

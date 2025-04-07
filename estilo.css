@@ -1,227 +1,272 @@
-/* ===== [CA3.7] Estilos mejorados ===== */
-:root {
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --background: #f8fafc;
-    --text: #1e293b;
-    --text-light: #64748b;
-    --card-bg: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --radius: 12px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* ===== [CA3.7] Estilos mejorados ===== */  
+:root {  
+    --primary: #2563eb;  
+    --primary-hover: #1d4ed8;  
+    --background: #f8fafc;  
+    --text: #1e293b;  
+    --text-light: #64748b;  
+    --card-bg: #ffffff;  
+    --shadow: rgba(0, 0, 0, 0.1);  
+    --radius: 12px;  
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);  
+}  
 
-/* === Reset mejorado === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* === Reset mejorado === */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
 
-body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: var(--background);
-    color: var(--text);
-    line-height: 1.5;
-    min-height: 100vh;
-}
+body {  
+    font-family: 'Inter', system-ui, sans-serif;  
+    background-color: var(--background);  
+    color: var(--text);  
+    line-height: 1.5;  
+    min-height: 100vh;  
+}  
 
-/* === Hero Section (Nuevo diseño) === */
-.hero-section {
-    background: linear-gradient(135deg, #1e40af, #2563eb);
-    color: white;
-    padding: 4rem 1rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-}
+/* === Hero Section === */  
+.hero-section {  
+    background: linear-gradient(135deg, #1e40af, #2563eb);  
+    color: white;  
+    padding: 4rem 1rem;  
+    text-align: center;  
+    margin-bottom: 2rem;  
+    position: relative;  
+    overflow: hidden;  
+}  
 
-.hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 75% 100%, rgba(255, 255, 255, 0.1) 10%, transparent 40%);
-}
+.hero-section::before {  
+    content: "";  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    background: radial-gradient(circle at 75% 100%, rgba(255, 255, 255, 0.1) 10%, transparent 40%);  
+}  
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
+.hero-content {  
+    max-width: 800px;  
+    margin: 0 auto;  
+    position: relative;  
+    z-index: 1;  
+}  
 
-.tagline {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin: 0.5rem 0 1.5rem;
-}
+.tagline {  
+    font-size: 1.1rem;  
+    opacity: 0.9;  
+    margin: 0.5rem 0 1.5rem;  
+}  
 
-/* === Sistema de tarjetas (Nuevo diseño) === */
-.noticias-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
+/* === Sistema de tarjetas === */  
+.noticias-grid {  
+    max-width: 1200px;  
+    margin: 0 auto;  
+    padding: 0 1rem;  
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+    gap: 1.5rem;  
+}  
 
-.news-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 4px 6px var(--shadow);
-    transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
+.news-card {  
+    background: var(--card-bg);  
+    border-radius: var(--radius);  
+    overflow: hidden;  
+    box-shadow: 0 4px 6px var(--shadow);  
+    transition: var(--transition);  
+    border: 1px solid rgba(0, 0, 0, 0.05);  
+}  
 
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
+.news-card:hover {  
+    transform: translateY(-5px);  
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);  
+}  
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: var(--background);
-    border-bottom: 1px solid #e2e8f0;
-}
+.card-header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 1rem;  
+    background: var(--background);  
+    border-bottom: 1px solid #e2e8f0;  
+}  
 
-.news-badge {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+.news-badge {  
+    font-size: 0.8rem;  
+    padding: 0.25rem 0.75rem;  
+    border-radius: 1rem;  
+    font-weight: 500;  
+    text-transform: uppercase;  
+    letter-spacing: 0.5px;  
+}  
 
-.badge-ai {
-    background: #dbeafe;
-    color: #1e40af;
-}
+.badge-ai {  
+    background: #dbeafe;  
+    color: #1e40af;  
+}  
 
-.badge-seguridad {
-    background: #fee2e2;
-    color: #dc2626;
-}
+.badge-seguridad {  
+    background: #fee2e2;  
+    color: #dc2626;  
+}  
 
-.news-time {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    white-space: nowrap;
-}
+.news-time {  
+    font-size: 0.9rem;  
+    color: var(--text-light);  
+    white-space: nowrap;  
+}  
 
-.news-card h2 {
-    font-size: 1.25rem;
-    padding: 1rem 1rem 0;
-}
+.news-card h2 {  
+    font-size: 1.25rem;  
+    padding: 1rem 1rem 0;  
+}  
 
-.news-card h2 a {
-    color: var(--text);
-    transition: color 0.3s;
-    display: block;
-}
+.news-card h2 a {  
+    color: var(--text);  
+    transition: color 0.3s;  
+    display: block;  
+}  
 
-.news-card h2 a:hover {
-    color: var(--primary);
-}
+.news-card h2 a:hover {  
+    color: var(--primary);  
+}  
 
-.news-excerpt {
-    color: var(--text-light);
-    padding: 0 1rem;
-    margin: 0.5rem 0 1rem;
-    font-size: 0.95rem;
-}
+.news-excerpt {  
+    color: var(--text-light);  
+    padding: 0 1rem;  
+    margin: 0.5rem 0 1rem;  
+    font-size: 0.95rem;  
+}  
 
-.card-link {
-    display: block;
-    padding: 1rem;
-    text-align: right;
-    color: var(--primary);
-    font-weight: 500;
-    transition: var(--transition);
-}
+.card-link {  
+    display: block;  
+    padding: 1rem;  
+    text-align: right;  
+    color: var(--primary);  
+    font-weight: 500;  
+    transition: var(--transition);  
+}  
 
-.card-link:hover {
-    color: var(--primary-hover);
-    text-decoration: underline;
-}
+.card-link:hover {  
+    color: var(--primary-hover);  
+    text-decoration: underline;  
+}  
 
-/* === Slider (Mantener compatibilidad) === */
-.slider {
-    flex: 1;
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: 0 4px 6px var(--shadow);
-    max-height: 300px;
-    overflow: hidden;
-}
+/* === Slider mejorado === */  
+.slider {  
+    flex: 1;  
+    background: var(--card-bg);  
+    border-radius: var(--radius);  
+    padding: 1rem;  
+    box-shadow: 0 4px 6px var(--shadow);  
+    max-height: 300px;  
+    overflow: hidden;  
+    position: relative;  
+}  
 
-/* === Footer (Nuevo diseño) === */
-.news-footer {
-    margin-top: 4rem;
-    padding: 2rem 1rem;
-    text-align: center;
-    color: var(--text-light);
-    background: var(--card-bg);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
+.slider-contenido {  
+    min-height: 200px;  
+    overflow: hidden;  
+    position: relative;  
+}  
 
-.footer-rss {
-    color: var(--primary);
-    font-weight: 500;
-    transition: var(--transition);
-}
+.slide {  
+    width: 100%;  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;  
+    opacity: 0;  
+    transform: translateY(100%);  
+}  
 
-.footer-rss:hover {
-    color: var(--primary-hover);
-    text-decoration: underline;
-}
+.slide.active {  
+    opacity: 1;  
+    transform: translateY(0);  
+}  
 
-/* === Responsive Design === */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 3rem 1rem;
-    }
+.slide-link {  
+    display: block;  
+    text-decoration: none;  
+    color: var(--text);  
+    padding: 0.5rem 1rem;  
+}  
+
+.slide-link:hover {  
+    background: rgba(0, 0, 0, 0.03);  
+}  
+
+.slide-date {  
+    display: block;  
+    font-size: 0.85rem;  
+    color: var(--text-light);  
+    margin-top: 0.25rem;  
+}  
+
+/* === Placeholder para carga inicial === */  
+.slide-placeholder {  
+    height: 200px;  
+    visibility: hidden;  
+}  
+
+/* === Footer === */  
+.news-footer {  
+    margin-top: 4rem;  
+    padding: 2rem 1rem;  
+    text-align: center;  
+    color: var(--text-light);  
+    background: var(--card-bg);  
+    border-top: 1px solid rgba(0, 0, 0, 0.05);  
+}  
+
+.footer-rss {  
+    color: var(--primary);  
+    font-weight: 500;  
+    transition: var(--transition);  
+}  
+
+.footer-rss:hover {  
+    color: var(--primary-hover);  
+    text-decoration: underline;  
+}  
+
+/* === Responsive Design === */  
+@media (max-width: 768px) {  
+    .hero-section {  
+        padding: 3rem 1rem;  
+    }  
     
-    .news-card h2 {
-        font-size: 1.1rem;
-    }
+    .news-card h2 {  
+        font-size: 1.1rem;  
+    }  
     
-    .tagline {
-        font-size: 1rem;
-    }
-}
+    .tagline {  
+        font-size: 1rem;  
+    }  
+}  
 
-/* === Animaciones === */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
+/* === Animaciones === */  
+@keyframes float {  
+    0%, 100% { transform: translateY(0); }  
+    50% { transform: translateY(-5px); }  
+}  
 
+.rss-link {  
+    display: inline-flex;  
+    align-items: center;  
+    gap: 0.5rem;  
+    background: rgba(255, 255, 255, 0.1);  
+    padding: 0.75rem 1.5rem;  
+    border-radius: 2rem;  
+    color: white;  
+    text-decoration: none;  
+    transition: all 0.3s ease;  
+    position: relative;  
+}  
 
-.rss-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.75rem 1.5rem;
-    border-radius: 2rem;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.rss-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
+.rss-link:hover {  
+    background: rgba(255, 255, 255, 0.2);  
+    transform: translateY(-2px);  
+}  

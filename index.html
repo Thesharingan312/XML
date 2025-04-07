@@ -1,102 +1,124 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias Tech Diario</title>
-    <link rel="alternate" type="application/rss+xml" title="RSS Noticias Tech" href="canal.xml" />
-    <link rel="stylesheet" href="estilo.css" />
-</head>
-<body>
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>🚀 Noticias Tech Diario</h1>
-            <p class="tagline">Actualizaciones diarias sobre el mundo tecnológico: IA, ciberseguridad, software y más.</p>
-            <div class="rss-banner">
-                <a href="canal.xml" class="rss-link">
-                    📡 Suscríbete vía RSS
-                    <span class="tooltip">Recibe actualizaciones automáticas</span>
-                </a>
-            </div>
-        </div>
-    </header>
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Noticias Tech Diario</title>  
+    <link rel="alternate" type="application/rss+xml" title="RSS Noticias Tech" href="canal.xml" />  
+    <link rel="stylesheet" href="estilo.css" />  
+</head>  
+<body>  
+    <!-- Hero Section -->  
+    <header class="hero-section">  
+        <div class="hero-content">  
+            <h1>🚀 Noticias Tech Diario</h1>  
+            <p class="tagline">Actualizaciones diarias sobre el mundo tecnológico: IA, ciberseguridad, software y más.</p>  
+            <div class="rss-banner">  
+                <a href="canal.xml" class="rss-link">  
+                    📡 Suscríbete vía RSS  
+                    <span class="tooltip">Recibe actualizaciones automáticas</span>  
+                </a>  
+            </div>  
+        </div>  
+    </header>  
 
-    <div class="contenedor">
-        <!-- Contenido principal dinámico -->
-        <main class="principal">
-            <div class="noticias-grid" id="rss-feed"></div>
-        </main>
+    <div class="contenedor">  
+        <!-- Contenido principal -->  
+        <main class="principal">  
+            <div class="noticias-grid" id="rss-feed"></div>  
+        </main>  
 
-        <!-- Slider dinámico -->
-        <aside class="slider">
-            <h3>🔝 Top Noticias</h3>
-            <div class="slider-wrapper">
-                <div class="slider-contenido" id="slider-contenido"></div>
-            </div>
-        </aside>
-    </div>
+        <!-- Slider dinámico -->  
+        <aside class="slider">  
+            <h3>🔝 Top Noticias</h3>  
+            <div class="slider-wrapper">  
+                <div class="slider-contenido" id="slider-contenido">  
+                    <div class="slide-placeholder"></div>  
+                </div>  
+            </div>  
+        </aside>  
+    </div>  
 
-    <!-- Footer -->
-    <footer class="news-footer">
-        <p>📡 <a href="canal.xml" class="footer-rss">Suscribirse al RSS</a> | © 2025 Noticias Tech</p>
-    </footer>
+    <!-- Footer -->  
+    <footer class="news-footer">  
+        <p>📡 <a href="canal.xml" class="footer-rss">Suscribirse al RSS</a> | &copy; 2025 Noticias Tech</p>  
+    </footer>  
 
-    <!-- Scripts unificados -->
-    <script>
-        // Cargar y transformar el RSS usando XSL
-        fetch('canal.xml')
-            .then(response => response.text())
-            .then(xml => {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xml, "application/xml");
+    <!-- Scripts -->  
+    <script>  
+        // Cargar y transformar el RSS  
+        fetch('canal.xml')  
+            .then(response => response.text())  
+            .then(xml => {  
+                const parser = new DOMParser();  
+                const xmlDoc = parser.parseFromString(xml, "application/xml");  
                 
-                // Aplicar transformación XSL para las tarjetas
-                const xslt = new XSLTProcessor();
-                fetch('estilo-rss.xsl')
-                    .then(response => response.text())
-                    .then(xsl => {
-                        const xslDoc = parser.parseFromString(xsl, "application/xml");
-                        xslt.importStylesheet(xslDoc);
-                        const html = xslt.transformToFragment(xmlDoc, document);
-                        document.getElementById("rss-feed").appendChild(html);
+                // Aplicar transformación XSL para las tarjetas  
+                const xslt = new XSLTProcessor();  
+                fetch('estilo-rss.xsl')  
+                    .then(response => response.text())  
+                    .then(xsl => {  
+                        const xslDoc = parser.parseFromString(xsl, "application/xml");  
+                        xslt.importStylesheet(xslDoc);  
+                        const html = xslt.transformToFragment(xmlDoc, document);  
+                        document.getElementById("rss-feed").appendChild(html);  
 
-                        // Extraer noticias para el slider
-                        const items = xmlDoc.getElementsByTagName('item');
-                        const sliderContenido = document.getElementById('slider-contenido');
-                        sliderContenido.innerHTML = ''; // Limpiar slider anterior
+                        // Extraer noticias para el slider  
+                        const items = xmlDoc.getElementsByTagName('item');  
+                        const sliderContenido = document.getElementById('slider-contenido');  
+                        sliderContenido.innerHTML = '';  
 
-                        // Mostrar las 2 noticias más recientes
-                        Array.from(items).slice(0, 5).forEach(item => {
-                            const title = item.getElementsByTagName('title')[0].textContent;
-                            const link = item.getElementsByTagName('link')[0].textContent;
-                            const pubDate = item.getElementsByTagName('pubDate')[0].textContent;
+                        // Generar slides  
+                        const slides = Array.from(items).slice(0, 5).map(item => {  
+                            const title = item.getElementsByTagName('title')[0].textContent;  
+                            const link = item.getElementsByTagName('link')[0].textContent;  
+                            const pubDate = new Date(item.getElementsByTagName('pubDate')[0].textContent).toLocaleDateString('es-ES', {  
+                                day: 'numeric',  
+                                month: 'long',  
+                                year: 'numeric'  
+                            });  
 
-                            const slide = document.createElement('div');
-                            slide.className = 'slide';
-                            slide.innerHTML = `
-                                <a href="${link}" target="_blank">
-                                    <strong>${title}</strong>
-                                </a>
-                                <p>${pubDate}</p>
-                            `;
-                            sliderContenido.appendChild(slide);
-                        });
+                            const slide = document.createElement('div');  
+                            slide.className = 'slide';  
+                            slide.innerHTML = `  
+                                <a href="${link}" target="_blank" class="slide-link">  
+                                    <strong>${title}</strong>  
+                                    <span class="slide-date">${pubDate}</span>  
+                                </a>  
+                            `;  
+                            return slide;  
+                        });  
 
-                        // Iniciar animación del slider
-                        let currentIndex = 0;
-                        setInterval(() => {
-                            const slides = sliderContenido.children;
-                            const total = slides.length;
+                        // Agregar slides al contenedor  
+                        slides.forEach(slide => sliderContenido.appendChild(slide));  
 
-                            for (let i = 0; i < total; i++) {
-                                slides[i].style.transform = `translateY(-${100 * currentIndex}%)`;
-                            }
+                        // Iniciar animación del slider  
+                        let currentIndex = 0;  
+                        const totalSlides = slides.length;  
 
-                            currentIndex = (currentIndex + 1) % total;
-                        }, 3000);
-                    });
-            });
-    </script>
-</body>
-</html>
+                        const mostrarSlide = (index) => {  
+                            // Mover todos los slides a su posición  
+                            slides.forEach((slide, i) => {  
+                                const offset = (i - index) * 100;  
+                                slide.style.transform = `translateY(${offset}%)`;  
+                                slide.style.opacity = (i === index) ? 1 : 0;  
+                            });  
+                        };  
+
+                        if (totalSlides > 0) {  
+                            // Mostrar primer slide inmediatamente  
+                            mostrarSlide(0);  
+
+                            // Cambiar slide cada 5 segundos  
+                            setInterval(() => {  
+                                currentIndex = (currentIndex + 1) % totalSlides;  
+                                mostrarSlide(currentIndex);  
+                            }, 5000);  
+                        }  
+                    })  
+                    .catch(error => console.error('Error cargando XSL:', error));  
+            })  
+            .catch(error => console.error('Error cargando RSS:', error));  
+    </script>  
+</body>  
+</html>  
