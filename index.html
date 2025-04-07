@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-    <!-- Hero Section (Nuevo diseño) -->
+    <!-- Hero Section -->
     <header class="hero-section">
         <div class="hero-content">
             <h1>🚀 Noticias Tech Diario</h1>
@@ -23,32 +23,12 @@
     </header>
 
     <div class="contenedor">
-        <!-- Contenido principal actualizado -->
+        <!-- Contenido principal dinámico -->
         <main class="principal">
-            <div class="noticias-grid">
-                <article class="news-card">
-                    <div class="card-header">
-                        <span class="news-badge badge-ai">IA</span>
-                        <time class="news-time">07 abr 2025</time>
-                    </div>
-                    <h2><a href="https://www.noticiastech.com/intel-ai-chip" target="_blank">Lanzamiento del nuevo chip Intel AI</a></h2>
-                    <p class="news-excerpt">Intel presenta su nuevo chip con capacidades de IA mejoradas para dispositivos móviles.</p>
-                    <a href="https://www.noticiastech.com/intel-ai-chip" target="_blank" class="card-link">Leer más →</a>
-                </article>
-
-                <article class="news-card">
-                    <div class="card-header">
-                        <span class="news-badge badge-seguridad">Seguridad</span>
-                        <time class="news-time">07 abr 2025</time>
-                    </div>
-                    <h2><a href="https://www.noticiastech.com/android15-seguridad" target="_blank">Actualización de seguridad para Android 15</a></h2>
-                    <p class="news-excerpt">Google lanza un parche importante para corregir vulnerabilidades críticas.</p>
-                    <a href="https://www.noticiastech.com/android15-seguridad" target="_blank" class="card-link">Leer más →</a>
-                </article>
-            </div>
+            <div class="noticias-grid" id="rss-feed"></div>
         </main>
 
-        <!-- Slider (Manteniendo estructura original) -->
+        <!-- Slider (se mantiene igual) -->
         <aside class="slider">
             <h3>🔝 Top Noticias</h3>
             <div class="slider-wrapper">
@@ -70,26 +50,48 @@
         </aside>
     </div>
 
-    <!-- Footer actualizado -->
+    <!-- Footer -->
     <footer class="news-footer">
         <p>📡 <a href="canal.xml" class="footer-rss">Suscribirse al RSS</a> | © 2025 Noticias Tech</p>
     </footer>
 
-    <!-- Carrusel de slider (JS original) -->
+    <!-- Script del slider (se mantiene igual) -->
     <script>
         const sliderContenido = document.getElementById('slider-contenido');
         let currentIndex = 0;
 
         setInterval(() => {
-        const slides = sliderContenido.children;
-        const total = slides.length;
+            const slides = sliderContenido.children;
+            const total = slides.length;
 
-        for (let i = 0; i < total; i++) {
-            slides[i].style.transform = `translateY(-${100 * currentIndex}%)`;
-        }
+            for (let i = 0; i < total; i++) {
+                slides[i].style.transform = `translateY(-${100 * currentIndex}%)`;
+            }
 
-        currentIndex = (currentIndex + 1) % total;
+            currentIndex = (currentIndex + 1) % total;
         }, 3000);
+    </script>
+
+    <!-- Script para cargar el RSS dinámicamente (NUEVO) -->
+    <script>
+        // Cargar y transformar el RSS usando XSL
+        fetch('canal.xml')
+            .then(response => response.text())
+            .then(xml => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xml, "application/xml");
+                
+                // Aplicar transformación XSL
+                const xslt = new XSLTProcessor();
+                fetch('estilo-rss.xsl')
+                    .then(response => response.text())
+                    .then(xsl => {
+                        const xslDoc = parser.parseFromString(xsl, "application/xml");
+                        xslt.importStylesheet(xslDoc);
+                        const html = xslt.transformToFragment(xmlDoc, document);
+                        document.getElementById("rss-feed").appendChild(html);
+                    });
+            });
     </script>
 </body>
 </html>

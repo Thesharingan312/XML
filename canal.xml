@@ -8,7 +8,7 @@
     <link>https://www.noticiastech.com</link>
     <description>Actualizaciones diarias sobre el mundo tecnológico: IA, ciberseguridad, software y más.</description>
     <language>es-es</language>
-    <lastBuildDate>Mon, 07 Apr 2025 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 12:19:00 +0000</lastBuildDate>
 
     <!-- [CRITERIO 5] Ejemplo de ítems para validación -->
     <item>
@@ -26,6 +26,16 @@
         <pubDate>Mon, 07 Apr 2025 09:00:00 +0000</pubDate>
         <guid>https://www.noticiastech.com/android15-seguridad</guid>
     </item>
+    
+    <item>
+        <title>NVIDIA lanza GPU para IA generativa</title>
+        <link>https://www.noticiastech.com/nvidia-ia-generativa</link>
+        <description>Nueva arquitectura Blackwell promete 25x mejor rendimiento en modelos de lenguaje.</description>
+        <pubDate>Mon, 07 Apr 2025 14:00:00 GMT</pubDate>
+        <guid>https://www.noticiastech.com/nvidia-ia-generativa</guid>
+    </item>
+
+
 
     <!-- [CRITERIO 6 y 7]
         Este archivo puede ser probado desde lectores como Feedly, Inoreader o Netvibes,
