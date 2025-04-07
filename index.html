@@ -67,7 +67,7 @@
                         sliderContenido.innerHTML = ''; // Limpiar slider anterior
 
                         // Mostrar las 2 noticias más recientes
-                        Array.from(items).slice(0, 4).forEach(item => {
+                        Array.from(items).slice(0, 5).forEach(item => {
                             const title = item.getElementsByTagName('title')[0].textContent;
                             const link = item.getElementsByTagName('link')[0].textContent;
                             const pubDate = item.getElementsByTagName('pubDate')[0].textContent;
