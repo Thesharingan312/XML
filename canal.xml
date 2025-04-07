@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+
+    <!-- [CRITERIO 4] Estructura del canal -->
+    <title>Noticias Tech Diario</title>
+    <link>https://www.noticiastech.com</link>
+    <description>Actualizaciones diarias sobre el mundo tecnológico: IA, ciberseguridad, software y más.</description>
+    <language>es-es</language>
+    <lastBuildDate>Mon, 07 Apr 2025 12:00:00 +0000</lastBuildDate>
+
+    <!-- [CRITERIO 5] Ejemplo de ítems para validación -->
+    <item>
+        <title>Lanzamiento del nuevo chip Intel AI</title>
+        <link>https://www.noticiastech.com/intel-ai-chip</link>
+        <description>Intel presenta su nuevo chip con capacidades de IA mejoradas para dispositivos móviles.</description>
+        <pubDate>Mon, 07 Apr 2025 10:30:00 +0000</pubDate>
+        <guid>https://www.noticiastech.com/intel-ai-chip</guid>
+    </item>
+
+    <item>
+        <title>Actualización de seguridad para Android 15</title>
+        <link>https://www.noticiastech.com/android15-seguridad</link>
+        <description>Google lanza un parche importante para corregir vulnerabilidades críticas.</description>
+        <pubDate>Mon, 07 Apr 2025 09:00:00 +0000</pubDate>
+        <guid>https://www.noticiastech.com/android15-seguridad</guid>
+    </item>
+
+    <!-- [CRITERIO 6 y 7]
+        Este archivo puede ser probado desde lectores como Feedly, Inoreader o Netvibes,
+        y validado en https://validator.w3.org/feed/
+    -->
+
+</channel>
+</rss>
