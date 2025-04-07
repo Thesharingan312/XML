@@ -1,125 +1,212 @@
-/* === Estilo para Noticias Tech === */
+/* ===== [CA3.7] Estilos mejorados ===== */
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background: #f8fafc;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === Reset mejorado === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
 }
 
-.contenedor {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
-    gap: 2rem;
+/* === Hero Section (Nuevo diseño) === */
+.hero-section {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.principal {
-    flex: 2;
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 75% 100%, rgba(255, 255, 255, 0.1) 10%, transparent 40%);
 }
 
-.principal h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
-.descripcion {
+.tagline {
     font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1rem;
+    opacity: 0.9;
+    margin: 0.5rem 0 1.5rem;
 }
 
-.fecha {
-    font-size: 0.9rem;
-    color: #999;
-}
-
-.noticias {
-    display: flex;
-    flex-direction: column;
+/* === Sistema de tarjetas (Nuevo diseño) === */
+.noticias-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-top: 1rem;
 }
 
-.noticia {
-    background: #fff;
-    border-radius: 12px;
-    padding: 1.2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+.news-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.noticia:hover {
-    transform: scale(1.02);
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.noticia h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--background);
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.noticia a {
-    color: #0077cc;
-    text-decoration: none;
-    font-weight: bold;
+.news-badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+.badge-ai {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-seguridad {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.news-time {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+.news-card h2 {
+    font-size: 1.25rem;
+    padding: 1rem 1rem 0;
+}
+
+.news-card h2 a {
+    color: var(--text);
+    transition: color 0.3s;
+    display: block;
+}
+
+.news-card h2 a:hover {
+    color: var(--primary);
+}
+
+.news-excerpt {
+    color: var(--text-light);
+    padding: 0 1rem;
+    margin: 0.5rem 0 1rem;
+    font-size: 0.95rem;
+}
+
+.card-link {
+    display: block;
+    padding: 1rem;
+    text-align: right;
+    color: var(--primary);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.card-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* === Slider (Mantener compatibilidad) === */
 .slider {
     flex: 1;
-    background: #ffffff;
-    border-radius: 12px;
+    background: var(--card-bg);
+    border-radius: var(--radius);
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow);
     max-height: 300px;
     overflow: hidden;
 }
 
-.slider h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+/* === Footer (Nuevo diseño) === */
+.news-footer {
+    margin-top: 4rem;
+    padding: 2rem 1rem;
     text-align: center;
+    color: var(--text-light);
+    background: var(--card-bg);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.slider-wrapper {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
+.footer-rss {
+    color: var(--primary);
+    font-weight: 500;
+    transition: var(--transition);
 }
 
-.slider-contenido {
-    display: flex;
-    flex-direction: column;
-    transition: transform 1s ease-in-out;
+.footer-rss:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
 }
 
-.slide {
-    min-height: 200px;
-    padding: 1rem;
-    box-sizing: border-box;
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 1rem;
+    }
+    
+    .news-card h2 {
+        font-size: 1.1rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
 }
 
-.slide a {
-    font-size: 1rem;
-    color: #0077cc;
-    text-decoration: none;
+/* === Animaciones === */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
-.slide p {
-    margin: 0.5rem 0 0;
-    font-size: 0.85rem;
-    color: #777;
-}
-
-footer {
-    margin-top: 2rem;
-    padding: 1rem;
-    background: #e0e7ef;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #0077cc;
-    text-decoration: none;
+.rss-link:hover {
+    animation: float 1.5s infinite;
 }
