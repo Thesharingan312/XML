@@ -1,81 +1,125 @@
 /* === Estilo para Noticias Tech === */
 
-* {
+body {
     margin: 0;
-    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.principal {
+    flex: 2;
+}
+
+.principal h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.fecha {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.noticia {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.noticia:hover {
+    transform: scale(1.02);
+}
+
+.noticia h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.noticia a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.slider {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.slider h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.slider-wrapper {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-contenido {
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-height: 200px;
+    padding: 1rem;
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: #f4f6f9;
-    color: #882020;
-    padding: 20px;
-    line-height: 1.6;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-main.noticias {
-    max-width: 800px;
-    margin: auto;
-}
-
-article {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-article h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-article h2 a {
+.slide a {
+    font-size: 1rem;
+    color: #0077cc;
     text-decoration: none;
-    color: #1a73e8;
 }
 
-article h2 a:hover {
-    text-decoration: underline;
-}
-
-article p {
-    color: #555;
-}
-
-article time {
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #888;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
+.slide p {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
     color: #777;
 }
 
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #e0e7ef;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
 footer a {
-    color: #1a73e8;
+    color: #0077cc;
     text-decoration: none;
 }

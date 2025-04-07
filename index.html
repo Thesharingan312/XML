@@ -7,33 +7,76 @@
 
 <!-- [CRITERIO 1 y 3] Sindicación de contenidos y tecnologías usadas -->
 <!-- Este enlace permite que navegadores o agregadores detecten el canal RSS -->
-    <link rel="alternate" type="application/rss+xml" title="RSS Noticias Tech" href="canal.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS Noticias Tech" href="canal.xml" />
 
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-    <header>
+    <div class="contenedor">
+
+    <!-- Contenido principal -->
+    <main class="principal">
         <h1>📰 Noticias Tech Diario</h1>
-        <p>Actualizaciones frescas sobre el mundo tecnológico.</p>
-    </header>
+        <p class="descripcion">Actualizaciones diarias sobre el mundo tecnológico: IA, ciberseguridad, software y más.</p>
+        <p class="fecha">Última actualización: 7 de abril de 2025</p>
 
-    <main class="noticias">
-        <!-- [CRITERIO 2 y 4] Noticias en contexto de uso frecuente y estructurado -->
-        <article>
-            <h2><a href="https://www.noticiastech.com/intel-ai-chip">Lanzamiento del nuevo chip Intel AI</a></h2>
-            <p>Intel presenta su nuevo chip con capacidades de IA mejoradas para dispositivos móviles.</p>
-            time datetime="2025-04-07T10:30:00">07 abril 2025</time>
+        <!-- [CRITERIO 2 y 4] Noticias estructuradas con contexto -->
+        <div class="noticias">
+        <article class="noticia">
+            <h2>Lanzamiento del nuevo chip Intel AI</h2>
+            <p>Intel presenta su nuevo chip con capacidades de IA mejoradas para dispositivos móviles.</>
+            <a href="https://www.noticiastech.com/intel-ai-chip" target="_blank">Leer más</a>
         </article>
 
-        <article>
-            <h2><a href="https://www.noticiastech.com/android15-seguridad">Actualización de seguridad para Android 15</a></h2>
+        <article class="noticia">
+            <h2>Actualización de seguridad para Android 15</h2>
             <p>Google lanza un parche importante para corregir vulnerabilidades críticas.</p>
-            <time datetime="2025-04-07T09:00:00">07 abril 2025</time>
+            <a href="https://www.noticiastech.com/android15-seguridad" target="_blank">Leer más</a>
         </article>
+        </div>
     </main>
 
-    <footer>
-        <p>📡 <a href="canal.xml">Suscribirse al RSS</a> | © 2025 Noticias Tech</p>
-    </footer>
+    <!-- [CRITERIO 6 y 7] Acceso y gestión desde agregadores + Slider carrusel -->
+    <aside class="slider">
+        <h3>🔝 Top Noticias</h3>
+        <div class="slider-wrapper">
+            <div class="slider-contenido" id="slider-contenido">
+                <div class="slide">
+                    <a href="https://www.noticiastech.com/intel-ai-chip" target="_blank">
+                        <strong>Lanzamiento del nuevo chip Intel AI</strong>
+                    </a>
+                    <p>07 abr 2025 - 10:30</p>
+                </div>
+                <div class="slide">
+                    <a href="https://www.noticiastech.com/android15-seguridad" target="_blank">
+                        <strong>Actualización de seguridad para Android 15</strong>
+                    </a>
+                    <p>07 abr 2025 - 09:00</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    </div>
+
+<footer>
+    <p>📡 <a href="canal.xml">Suscribirse al RSS</a> | © 2025 Noticias Tech</p>
+</footer>
+
+<!-- Carrusel de slider (JS) -->
+<script>
+    const sliderContenido = document.getElementById('slider-contenido');
+    let currentIndex = 0;
+
+    setInterval(() => {
+    const slides = sliderContenido.children;
+    const total = slides.length;
+
+    for (let i = 0; i < total; i++) {
+        slides[i].style.transform = `translateY(-${100 * currentIndex}%)`;
+    }
+
+    currentIndex = (currentIndex + 1) % total;
+    }, 3000);
+</script>
 </body>
 </html>
